@@ -13,12 +13,11 @@ class Course(models.Model):
     @property
     def credits(self):
         return (
-            self.lecture_hours 
-            + self.tutorial_hours
-            + self.practical_hours
-            + self.self_study_hours
-            + self.independent_hours
-        )// 5 
+            self.lecture_hours*1
+            + self.tutorial_hours*1
+            + self.practical_hours*0.5
+            + self.self_study_hours*0.5
+        )
         
         # change the formula for calculating credits as per our requirements. 
 
@@ -181,4 +180,4 @@ class CourseType(models.Model):
     def __str__(self):
         return f"{self.short_code} - {self.name}"
 
- 
+

@@ -172,7 +172,7 @@ class Course_subcategory(models.Model):
     def __str__(self):
         return f"{self.short_code} - {self.name}"    
     
-class CourseType(models.Model):
+class Course_Type(models.Model):
     name=models.CharField(max_length=255, unique=True)
     short_code = models.CharField(max_length=20, unique=True, db_index=True, blank=True, null=True)
     class Meta:
